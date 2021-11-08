@@ -1,0 +1,410 @@
+% Comment lines start with %
+% LaTeX commands start with \
+
+\documentclass[12pt]{article}  % This is an article with font size 12-point
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Packages add features
+\usepackage{times}     % font choice
+\usepackage{amsmath}   % American Mathematical Association math formatting
+\usepackage{amsthm}    % nice formatting of theorems
+\usepackage{latexsym}  % provides some more symbols
+\usepackage{fullpage}  % uses most of the page (1-inch margins)
+\usepackage{algpseudocode}
+
+\setlength{\parskip}{.1in}  % increase the space between paragraphs
+
+\renewcommand{\baselinestretch}{1.1}  % increase the space between lines
+
+% Convenient renaming of symbols for logic formulas
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\XOR}{\oplus}
+\newcommand{\IMPLIES}{\rightarrow}
+\newcommand{\IFF}{\leftrightarrow}
+
+% Actual content starts here.
+\begin{document}
+
+\begin{center}         % center all the material between begin and end
+{\large                % use larger font
+CSCE 222-200, Discrete Structures for Computing, Honors \\  % \\ is line break
+Fall 2021 \\
+Homework 3 \\
+Aakash Haran}
+\end{center}
+
+% blank line separates paragraphs.  First line of a paragraph is automatically
+% indented.  
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+                    
+\noindent              % don't indent
+{\bf Instructions:}    % \bf makes text boldface
+                       % \em makes text emphasized (italics)
+
+\begin{itemize}        % makes an itemized list
+\item The exercises are from the textbook.  MAKE SURE YOU HAVE THE CORRECT
+      EDITION!  You are encouraged to work
+      extra problems to aid in your learning; remember, the solutions to 
+      the odd-numbered problems are in the back of the book.
+\item Each exercise is worth 5 points.
+\item Grading will be based on correctness, clarity, and whether your
+      solution is of the appropriate length.
+\item Always justify your answers.
+\item Don't forget to acknowledge all sources of assistance on the cover
+      sheet, and write up your solutions on your own.
+\item {\em Turn in your pdf file on Canvas by 3:00 PM, Wednesday, October 6.}
+\end{itemize}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf LaTeX hints:}  Read this .tex file for some explanations that are in
+the comments.
+
+Math formulas are enclosed in \$ signs, e.g., {\tt \$x + y = z\$}
+becomes $x + y = z$.
+
+Logical operators: $\NOT, \AND, \OR, \XOR, \IMPLIES, \IFF$.
+
+Here is a truth table using the ``tabular'' environment:
+
+\begin{center}
+\begin{tabular}{|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $\NOT p$ \\       % separate column entries with &
+\hline
+\hline
+T & F \\
+\hline
+F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf ** Delete the instructions and the LaTeX hints in your solution. **}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+% \subsection makes a subsection heading; * leaves it unnumbered.
+% (Usually subsections are inside sections, but the \section command
+% used a font that was larger than I wanted.)
+\subsection*{Exercises for Section 2.4 (pp.\ 177--179):}     
+
+\noindent
+{\bf 32(c):}
+21215
+
+\noindent
+{\bf 36):}
+The result is $1 - \frac{1}{n+1}$
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 2.5 (pp.\ 186--187):}     
+
+{\em Clarification for 2(e) and 4(e):
+To exhibit a one-to-one correspondence, it's sufficient
+to give a diagram of the pattern; if you provide the actual function
+and prove it is a bijection, you can get extra credit.}
+
+\noindent
+{\bf 2(e):}
+The result is countably infinite. Lining upt the elements of the set like so:
+\\
+\begin{center}
+$1: (2, 1), 2: (3, 1), 3: (2, 2), 4: (3, 2), 5: (2, 3), 6: (3, 3) ...$
+\end{center}
+We can create a function from each integer that creates an element of the cartesian product.
+\begin{center}
+$f(n) = (2 + (n + 1) \mod{2}, n - (n + 1) \mod{2})$
+\end{center}
+
+The function is one-to-one. $(f(a) = f(b)) \IMPLIES a = b$. If $a - (a + 1) \mod{2} = b - (b + 1) \mod{2}$,
+then $a = b$. Even if a and b have the same odd-even parity, they have to be equal.
+The function can be proven that it is onto. $\forall x \in S \exists n(f(n) = x)$. 
+
+
+\noindent
+{\bf 4(a):}
+The function should follow a pattern of $f(1) = 1, f(2) = 2, f(3) = 4, f(4) = 5, 
+f(5) = 7, f(6) = 8$
+
+\noindent
+{\bf (A):}
+Combining two countable sets, even if they are countably infinite sets, should always 
+result in a countable set. 
+
+\noindent
+{\bf (B):}
+If there exists a one-to-one function from set A to set B and set B to 
+set A, then A and B must have the same cardinality. 
+
+\noindent
+{\bf 10a:}
+A is the set of all real numbers, B is the set of all real numbers as well.
+\\
+{\bf 10b:}
+A is the set of real numbers less than or equal to 1, B is the set of all real numbers less than 1.
+\\
+{\bf 10c:}
+A is the set of real numbers, B is the set of real numbers bigger than 5.
+
+\noindent
+{\bf 34a:}
+Showing that $f(x) = \frac{2x-1}{2x(1-x)}$ is one-to-one:
+\\
+The derivative is $\frac{2x^2-2x+1}{2x^2(1-x^2)}$
+\\    
+The derivate is always positive for x in the domain $(0, 1)$, Hence
+the function is always increasing and should be one-to-one.
+\\
+{\bf 34b:}
+$f(x)$ is a function that reaches positive and negtive infinity in the 
+domain $0 \leq x \leq 1$ as the denominator approaches 0 when $x$ approaches
+0 and 1.
+
+\noindent
+{\bf 38:}
+Each element in the domain $(0, 1)$ can be written in 
+the form $0.d_{1}d_{2}d_{n}$ and has one-to-one corrseponence 
+to a function in the set of functions that map a positive integer
+to the set of integers 0 to 9. The set of real numbers
+in the domain $(0, 1)$ is uncountable and hence the set of functions must
+also be uncountable.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 3.1 (pp.\ 213--216):}     
+
+\noindent
+{\bf 28:}
+\\
+\begin{algorithmic}
+      \State $arr \gets [a_{1}, a_{2}, ... , a_{n}]$
+      \State $left \gets 1, right \gets n$
+      \State $m2 \gets 0$
+
+      \While{$left < right$}
+            \State $m2 \gets \floor*{\frac{l + r}{2}}$
+            \State $m1 \gets \floor*{\frac{l + m2}{2}}$
+            \State $m3 \gets \floor*{\frac{m2 + r}{2}}$
+
+            \If{$val == arr[m1]$}
+                  \State return m1
+            \EndIf
+            \If{$val == arr[m2]$}
+                  \State return m2
+            \EndIf
+            \If{$val == arr[m3]$}
+                  \State return m3
+            \EndIf
+            \If{$val < arr[m1]$}
+                  \State $right \gets m1$
+            \EndIf
+            \If{$val < arr[m2]$}
+                  \State $right \gets m2$
+                  \State $left \gets m1$
+            \EndIf
+            \If{$val < arr[m3]$}
+                  \State $right \gets m3$
+                  \State $left \gets m2$
+            \EndIf
+            \If{$val < arr[right]$}
+                  \State $left \gets m3$
+            \EndIf
+      \EndWhile
+      \State return $-1$
+      
+
+\end{algorithmic}
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 3.2 (pp.\ 228--231):}     
+
+\noindent
+{\bf 28a:} $f(x) = 10$ is not $\Omega(x)$ as there is no such C, k pair
+where $10 \geq Cx$ for all $x > k$. Because 10 is a constant, $x$ eventually
+exceeds it. 
+\\
+{\bf 28b:} $f(x) = 3x + 7$ is $\Omega(x)$ as the function is greater for
+C = 1, and k = 1. Since it is also $O(x)$, the function is $\Theta(x)$.
+\\
+{\bf 28c:} $f(x) = x^2 + x + 1$ is $\Omega(x)$, as the function's leading
+term has a higher exponent. It is actually $\omega(x)$. However, the function
+is not $O(x)$, so therefore, it is not $\Theta(x)$.
+\\
+{\bf 28d:} $f(x) = 5 log x$ is not $\Omega(x)$ as it's a smaller function
+since it's a logarithm. Therefore it's not $\Theta(x)$.
+\\
+{\bf 28e:} $f(x) = \floor*{x}$ is not $\Omega(x)$ as no matter what C and k
+values are chosen, $f(x)$ will not be greater than or equal to $x$ since
+decimal values would be floored. Hence, it is also not $\Theta(x)$
+\\
+{\bf 28f:} $f(x) = \floor*{\frac{x}{2}}$ is also not $\Omega(x)$ as no matter what C and k
+values are chosen, $f(x)$ will not be greater than or equal to $x$ since
+decimal values would be floored. Hence, it is also not $\Theta(x)$
+
+\noindent
+{\bf 50:}
+The function $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + ... + a_{1}x + a_{0}$ is $O(g(x))$ where 
+$g(x) = x^n$.
+There exists at least one C, k pair such that $f(x) \leq C*g(x)$ for $x > k$. 
+This is intuitive as we can say that $C \geq a_{n}$, and that it should also
+account for the remaining $n$ terms in $f(x)$. Since $g(x)$ is function that
+increases quicker than a function with a leading exponenet less than $n$, we know
+that we can make C and k appropriately high enough such that $g(x) > (f(x) - a_{n}x^n)$.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 3.3 (pp.\ 241--244):}     
+
+\noindent
+{\bf 4:} {\em Justify your answer.}\\
+$4 log_{2} n + 2$. Each iteration of the while loop has 4 operations, 
+two arithmetic and two assignments. It gets executed $log_{2}$ times and
+there are two initial assignments.
+
+\noindent
+{\bf 14a:}
+The loop can be expanded to show all the calculations.
+\\
+For i = 1, $y = 3*2 + 1$\\
+For i = 2, $y = 7*3 + 1$\\
+For i = 3, $y = 22*3 + 0$\\
+The result is $y = 66$.
+\\
+{\bf 14b:}
+There are n multiplication and n addition operations.
+
+\noindent
+{\bf 26:}
+There are 4 preliminary assignment operations. The loop will iterate approximately
+$log_{4}n$ times. Each iteration does 26 opertions. Each comparison of the loop
+is an operation. There are 12 operations to calculate the indices of the
+middle values. There are 6 comparison that use 12 operations due to the indexing
+Hence the complexity is $4 + 26log_{n}$.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 5.1 (pp.\ 350--354):}     
+
+\noindent
+{\bf 4a:}
+$P(1)$ is $1^3 = (\frac{1(1 + 1)}{2})^2$ which is true.
+{\bf 4b:}
+$1^3 = (\frac{1(1 + 1)}{2})^2$ simplifies to $1 = 1$ which is a true statement.
+This proved that the base case is true.
+\\
+{\bf 4c:}
+The inductive hypothesis is that $P(k)$ is true. This is the statement
+\[ \sum_{i=1}^{k} i^3 = (\frac{k(k + 1)}{2})^2 \]
+\\
+{\bf 4d:}
+It should be shown that $P(k) \IMPLIES P(k+1)$
+\\
+{\bf 4e:}
+The following statement must be shown.
+\begin{center}
+$1^3 + 2^3 + ... + k^3 + (k+1)^3 = (\frac{(k + 1)(k + 2)}{2})^2$
+\end{center}
+The inductive hypothesis can be used to replace the first k terms. This 
+yields the statement:
+\begin{center}
+$(\frac{k(k + 1)}{2})^2 + (k + 1)^3 = (\frac{(k + 1)(k + 2)}{2})^2$
+\end{center}
+We can distribute the squares into their expressions.
+\begin{center}
+      $\frac{k^2(k + 1)^2}{4} + (k + 1)^3 = \frac{(k + 1)^2(k + 2)^2}{4}$
+\end{center}
+We then multiply by four and divide by $(k + 1)^2$.
+\begin{center}
+      $k^2 + 4(k + 1) = (k + 2)^2$
+\end{center}
+Expanding the both sides reveals that they are equal.
+\begin{center}
+      $k^2 + 4k + 4 = k^2 + 4k + 4$
+\end{center}
+Hence, we have proved that $P(k) \IMPLIES P(k+1)$, so the statement
+$\forall n P(n)$ is true.
+\\
+{\bf 4f:}
+Mathematical induction relies on the idea that a statement being true
+for a value k implies that is true for k + 1, the next integer. If we prove
+the statement for a base case such as n = 1, the smallest positive integer and 
+that each case implies the next case is true, this effectively proves the statement
+for all integers. $((P(1)) \AND (P(k) \IMPLIES P(k + 1)) \IMPLIES \forall n P(n))$
+where $n$ is a positive integrer.
+
+\noindent
+{\bf 14:}
+The goal is to prove the statement \[ \sum_{k=1}^{n} k2^k = (n - 1)2^{n + 1} + 2 \]
+Showing that the statement is true for the base case $n = 1$:
+\begin{center}
+      $1(2^1) = (1 - 1)2^{1 + 1} + 2$ 
+\end{center}
+Constructing the inductive hypothesis:
+\begin{center}
+      \[ \sum_{j=1}^{k} j2^j = (k - 1)2^{k + 1} + 2 \]
+\end{center}
+Attempting to prove $P(k) \IMPLIES P(k+1)$
+\begin{center}
+      $1*2^1 + 2*2^2 + 3*2^3 + ... + k*2^k + (k + 1) * 2^{k + 1} = (k)*2^{k + 2} + 2$
+\end{center}
+The inductive hypothesis can be used to replace the first k terms.
+\begin{center}
+      $(k - 1)2^{k + 1} + 2 + (k + 1) * 2^{k + 1} = (k)*2^{k + 2} + 2$
+\end{center}
+Subtracting the constants and expanding the left side reveals the follwing statement:
+\begin{center}
+      $(k)2^{k + 1} + (k) * 2^{k + 1} + 2^{k + 1} - 2^{k + 1}= (k)*2^{k + 2}$
+\end{center}
+Cancelling terms and simplifying the statements proves their equality:
+\begin{center}
+      $2*(k)2^{k + 1}= (k)*2^{k + 2}$
+\end{center}
+Hence, since $P(1)$ is true and $P(k) \IMPLIES P(k+1)$, the statement
+$\forall n P(n)$ where $n$ is a positive integer is true. 
+\noindent
+{\bf 20:}
+The goal is to prove the statement \[ \sum_{k=1}^{n} k2^k = (n - 1)2^{n + 1} + 2 \]
+Showing that the statement is true for the base case $n = 7$:
+\begin{center}
+      $3^7 < 7!$ is $2187 < 5040$
+\end{center}
+Constructing the inductive hypothesis:
+\begin{center}
+      $3^k < k!$
+\end{center}
+Attempting to prove $P(k) \IMPLIES P(k + 1)$
+\begin{center}
+      $3^{k + 1} < (k + 1)!$
+\end{center}
+We can split the left and right sides and use the inductive hypothesis:
+\begin{center}
+      $3^k3^1 < (k + 1)(k)!$
+\end{center}
+Since we know from the inductive hypothesis that $3^k < k!$ and that
+$3^1 < k + 1$ since k is an integer greater than 6, the statement is true.
+\\
+Hence, since $P(1)$ is true and $P(k) \IMPLIES P(k + 1)$, the statement
+$\forall n P(n)$ where $n$ is an integer greater than 6 is true.
+\noindent
+\\
+{\bf 40:}
+Showing that $(A_{1} \cap A_{2} \cap ... \cap A_{n}) \cup B= (A_{1} \cup B) \cap (A_{2} \cup B) \cap ... \cap (A_{n} \cup B)$ is true for all $n$.
+\\
+We can see this relationship in a smaller case: $(A \cap B) \cup C$.
+If $k \epsilon (A \cap B) \cup C$ then $k$ is an element of $C$ or 
+$k$ is an element of $(A \cap B)$ or both. So we can say that $k$ should 
+be a member of $A$ or $C$ and $B$ or $C$. This evaluates to $k \epsilon ((A \cap C) \cup (B \cap C))$.
+This is a proof of the distributive law and can be applied to any number of sets.
+\end{document}

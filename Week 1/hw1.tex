@@ -1,0 +1,237 @@
+% Comment lines start with %
+% LaTeX commands start with \
+
+\documentclass[12pt]{article}  % This is an article with font size 12-point
+
+% Packages add features
+\usepackage{times}     % font choice
+\usepackage{amsmath}   % American Mathematical Association math formatting
+\usepackage{amsthm}    % nice formatting of theorems
+\usepackage{latexsym}  % provides some more symbols
+\usepackage{fullpage}  % uses most of the page (1-inch margins)
+
+\setlength{\parskip}{.1in}  % increase the space between paragraphs
+
+\renewcommand{\baselinestretch}{1.1}  % increase the space between lines
+
+% Convenient renaming of symbols for logic formulas
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\XOR}{\oplus}
+\newcommand{\IMPLIES}{\rightarrow}
+\newcommand{\IFF}{\leftrightarrow}
+\newcommand{\EQUIV}{\equiv}
+
+% Actual content starts here.
+\begin{document}
+
+\begin{center}         % center all the material between begin and end
+{\large                % use larger font
+CSCE 222-200, Discrete Structures for Computing, Honors \\  % \\ is line break
+Fall 2021 \\
+Homework 1 \\
+Aakash Haran}
+\end{center}
+
+% blank line separates paragraphs.  First line of a paragraph is automatically
+% indented.  
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+                    
+\noindent              % don't indent
+{\bf Name: } Aakash Haran \\
+{\bf Email: }  ash3498@tamu.edu \\
+{\bf Assignment: } Homework 1\\
+{\bf Resources used: } Discrete Mathematics and its Applications, Eight Edition, Kenneth Rosen\\
+\\
+"On my honor, as an Aggie, I have neither given nor received unauthorized aid on this academic work. In particular, I certify that I have listed above all the sources that I consulted regarding this assignment, and that I have not received or given any assistance that is contrary to the letter or the spirit of the collaboration guidelines for this assignment."\\\\
+\noindent
+{\bf Signature: } Aakash Haran          {\bf Date: } 09-03-2021\\ 
+\\
+\noindent
+{\bf Instructions:}    % \bf makes text boldface
+                       % \em makes text emphasized (italics)                         
+
+\begin{itemize}        % makes an itemized list
+\item The exercises are from the textbook.  MAKE SURE YOU HAVE THE CORRECT
+      EDITION!  You are encouraged to work
+      extra problems to aid in your learning; remember, the solutions to 
+      the odd-numbered problems are in the back of the book.
+\item Each exercise is worth 5 points.
+\item Grading will be based on correctness, clarity, and whether your
+      solution is of the appropriate length.
+\item Always justify your answers.
+\item Don't forget to acknowledge all sources of assistance on the cover
+      sheet, and write up your solutions on your own.
+\item {\em Turn in your pdf file on Canvas by 3:00 PM on Wednesday, Sep 8.}
+\end{itemize}
+
+\noindent
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+% \subsection makes a subsection heading; * leaves it unnumbered.
+% (Usually subsections are inside sections, but the \section command
+% used a font that was larger than I wanted.)
+\subsection*{Exercises for Section 1.1 (pp. 13--17):}     
+
+\noindent
+{\bf 34(f):}\\\\
+\indent
+\begin{tabular}{|c|c|c|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $q$ & $p \IFF q$ & $p \IFF \NOT q$ & $(p \IFF q) \XOR (p \IFF \NOT q)$\\       % separate column entries with &
+\hline
+\hline
+T & T & T & F & T\\
+\hline
+T & F & F & T & T\\
+\hline
+F & T & F & T & T\\
+\hline
+F & F & T & F & T\\
+\hline
+\end{tabular}
+
+
+\noindent
+{\bf 44:}  {\em Hint:}  If you need to gain intuition for what the
+formula is stating, consider the case when $n = 3$ (when $i = 1$,
+$j$ can take on the values 2 and 3, and when $i = 2$, $j$ can take
+on the value 3) and the case when $n = 4$.
+
+If $p_{1}$ to $p_{n}$ were all false, the expression would still evaluate to true as each of the OR statements would evaluate to true and in turn the AND statements using these results would be true. If at most one expression $p_{i}$ were true it would still be a tautology as every OR statement would be still be true as it takes the maximum of the two input truth values. However, if two statements $p_{i}$ and $p_{j}$ are true, then $p_{i} \OR p_{j}$ would evaluate to false and hence the AND statement with that result would result in false, hence changing the result.
+
+\noindent
+{\bf 50:}
+We can assume happiness is given a truth value of 1, True and sadness was given 0, False though the inverse could be true as well. Then the result would be True for "Fred and John are happy" and False for "Neither Fred nor John or happy".
+
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 1.2 (pp. 23--26):}     
+
+\noindent
+{\bf 18(c):} If exactly two inscriptions are true, one inscription is false, which is easier to think about. If Trunk 1 is false, there must be treasure in Trunk 1 according to itself, Trunk 2 says there is treasure in Trunk 1 which must be a true statement and agrees with Trunk 1, and Trunk 3 says there is treasure in Trunk 2, which doesn't contradict any of the propositions. If Trunk 1 is the false statement, the treasure is in Trunk 1 and 2. 
+
+If Trunk 2 is false, then there is no treasure in Trunk 1. This agrees with Trunk 1, which says there is no treasure in Trunk 1. Trunk 3 says there is treasure in Trunk 2, which doesn't disagree with any statement. Hence, if Trunk 2 is false, then the treasure must be in Trunk 3 and Trunk 2.
+
+If Trunk 3 is false, then there must not be treasure in Trunk 2. However, Trunk 2 and 1 must be true statements. If Trunk 2 says there is treasure in Trunk 1 and Trunk 1 says there is not treasure in Trunk 1, there is a contradiction. Hence, this case is impossible.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 1.3 (pp. 38--40):}     
+
+\noindent
+{\bf 6:}\\
+
+\begin{tabular}{|c|c|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $q$ & $\NOT (p \AND q)$ & $\NOT p \OR \NOT q$ \\       % separate column entries with &
+\hline
+\hline
+T & T & F & F\\
+\hline
+T & F & T & T\\
+\hline
+F & T & T & T\\
+\hline
+F & F & T & T\\
+\hline
+\end{tabular}
+
+\noindent
+The third and fourth columns are identical, proving De Morgan's Law.
+
+\noindent
+{\bf 12(d):}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$p$ & $q$ & $r$ & $p \OR q$ & $p \IMPLIES r$ & $q \IMPLIES r$ & $ [(p \OR q) \AND (p \IMPLIES r) \AND (q \IMPLIES r)] \IMPLIES r$ \\
+\hline
+\hline
+T & T & T & T & T & T & T\\
+\hline
+T & T & F & T & F & F & T\\
+\hline
+T & F & T & T & T & T & T\\
+\hline
+T & F & F & T & F & F & T\\
+\hline
+F & T & T & T & T & T & T\\
+\hline
+F & T & F & T & T & F & T\\
+\hline
+F & F & T & F & T & T & T\\
+\hline
+F & F & F & F & T & T & T\\
+\hline
+\end{tabular}
+
+\noindent
+{\bf 16(d):}
+\\
+\indent
+$ [(p \OR q) \AND (p \IMPLIES r) \AND (q \IMPLIES r)] \IMPLIES r$ \\
+
+Using identity $(p \IMPLIES r) \AND (q \IMPLIES r) \EQUIV (p \OR q) \IMPLIES r $ \\
+
+$[(p \OR q) \AND [(p \OR q) \IMPLIES r]] \IMPLIES r$\\
+
+Using identity $p \IMPLIES q \EQUIV \NOT q \OR p$
+
+$ \NOT [(p \OR q) \AND [\NOT(p \OR q) \OR r]] \OR r$ \\
+
+Using the Associative Law
+
+$ \NOT [[(p \OR q) \AND \NOT (p \OR q)] \OR r] \OR r $\\
+
+Simplifying and applying the Identity Law
+
+$ \NOT(F \OR r) \OR r$ \\
+\indent
+$ \NOT r \OR r \EQUIV True $
+
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 1.4 (pp. 56--60):}     
+
+\noindent
+{\bf 10(c):} $\exists x(C(x) \AND F(x) \AND \NOT D(x))$\\
+
+\noindent
+{\bf 20(c):} For every x in the domain, when x is not equal to 1, the proposition P(x) is evaluated to true.\\
+
+\noindent
+{\bf 46:} The two statements are not logically equivalent.
+
+The logical statement $\forall x(P(x) \IFF Q(x))$ can be rearranged to $\forall x (P(x) \IMPLIES Q(x)) \AND \forall x (Q(x) \IMPLIES P(x))$. The statement $\forall x P(x) \IFF \forall x Q(x)$ can be rearranged to $(\forall x P(x) \IMPLIES \forall x Q(x)) \AND (\forall x Q(x) \IMPLIES \forall x P(x))$. Since distributing the universal quantifier over the implies connector changes the logical statement, it is not possible to get the second simplification from the first. $\forall x (P(x) \IMPLIES Q(x)) \not\equiv (\forall x P(x) \IMPLIES \forall x Q(x))$.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 1.5 (pp. 68-72):}     
+
+\noindent
+{\bf 20(c):}. $\forall x \exists y [((x < 0) \AND (y < 0)) \IMPLIES (x - y > 0)]$\\
+
+\noindent
+{\bf 20(d):} $\forall x \forall y (|x + y| \leq |x|+|y|)$
+
+\noindent
+{\bf 30(e):}
+
+The original proposition: $\NOT \exists y (\forall x \exists z T(x, y, z) \OR \exists x \forall z U(x, y, z))$ \\
+\indent
+The new proposition: $\forall y (\exists x \forall z \NOT T(x, y, z) \AND \forall x \exists z \NOT U(x, y, z))$
+
+\noindent
+{\bf 52:} $\exists x (P(x) \AND \forall y (( y \neq x) \IMPLIES \NOT P(y)))$\\
+
+\end{document}

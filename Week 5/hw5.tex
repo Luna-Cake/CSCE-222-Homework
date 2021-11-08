@@ -1,0 +1,441 @@
+% Comment lines start with %
+% LaTeX commands start with \
+
+\documentclass[12pt]{article}  % This is an article with font size 12-point
+
+% Packages add features
+\usepackage{mathtools}
+\usepackage{times}     % font choice
+\usepackage{amsmath}   % American Mathematical Association math formatting
+\usepackage{amsthm}    % nice formatting of theorems
+\usepackage{latexsym}  % provides some more symbols
+\usepackage{fullpage}  % uses most of the page (1-inch margins)
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\setlength{\parskip}{.1in}  % increase the space between paragraphs
+
+\renewcommand{\baselinestretch}{1.1}  % increase the space between lines
+
+% Convenient renaming of symbols for logic formulas
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\XOR}{\oplus}
+\newcommand{\IMPLIES}{\rightarrow}
+\newcommand{\IFF}{\leftrightarrow}
+
+% Actual content starts here.
+\begin{document}
+
+\begin{center}         % center all the material between begin and end
+{\large                % use larger font
+CSCE 222-200, Discrete Structures for Computing, Honors \\  % \\ is line break
+Fall 2021 \\
+Homework 5 \\
+Aakash Haran}
+\end{center}
+
+% blank line separates paragraphs.  First line of a paragraph is automatically
+% indented.  
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+                    
+\noindent              % don't indent
+{\bf Instructions:}    % \bf makes text boldface
+                       % \em makes text emphasized (italics)
+
+\begin{itemize}        % makes an itemized list
+\item The exercises are from the textbook.  MAKE SURE YOU HAVE THE CORRECT
+      EDITION!  You are encouraged to work
+      extra problems to aid in your learning; remember, the solutions to 
+      the odd-numbered problems are in the back of the book.
+\item Each exercise is worth 5 points.
+\item Grading will be based on correctness, clarity, and whether your
+      solution is of the appropriate length.
+\item Always justify your answers. 
+\item Don't forget to acknowledge all sources of assistance on the cover
+      sheet, and write up your solutions on your own.
+\item {\em Turn in your pdf file on Canvas by 3:00 PM, Wednesday, November 10.}
+\end{itemize}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf LaTeX hints:}  Read this .tex file for some explanations that are in
+the comments.
+
+Math formulas are enclosed in \$ signs, e.g., {\tt \$x + y = z\$}
+becomes $x + y = z$.
+
+Logical operators: $\NOT, \AND, \OR, \XOR, \IMPLIES, \IFF$.
+
+Here is a truth table using the ``tabular'' environment:
+
+\begin{center}
+\begin{tabular}{|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $\NOT p$ \\       % separate column entries with &
+\hline
+\hline
+T & F \\
+\hline
+F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf ** Delete the instructions and the LaTeX hints in your solution. **}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+% \subsection makes a subsection heading; * leaves it unnumbered.
+% (Usually subsections are inside sections, but the \section command
+% used a font that was larger than I wanted.)
+
+\subsection*{Exercises for Section 6.1 (pp.\ 416--420):}     
+
+\noindent
+{\bf 22 (b), (c), (d), (e), (f):} 
+\\
+130, 12, 220, 208, 780
+
+\noindent
+{\bf 32 (a), (b), (c), (d), (e):
+\\
+$26^8$, $26 \times 25 \times 24 \times 23 \times 22 \times 21 \times 20 \times 19$, 
+$26 \times 25 \times 24 \times 23 \times 22 \times 21 \times 20$, 
+$25 \times 24 \times 23 \times 22 \times 21 \times 20 \times 19$.
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 6.2 (pp.\ 426--428):}     
+
+\noindent
+{\bf 4 (a) and (b):}
+\\
+$5, 13$
+
+\noindent
+{\bf 12:}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 6.3 (pp.\ 435--437):}     
+
+\noindent
+{\bf 10: $6!$
+
+\noindent
+{\bf 12a:} $C(12, 3)$ 
+\\
+{\bf 12b:} $C(12, 0) + C(12, 1) + C(12, 2) + C(12, 3)$
+\\
+{\bf 12c:}
+\\
+\[ \sum_{n=4}^{12} C(12, n) \]
+\\
+{\bf 12d:} $C(12, 6)$
+
+\noindent
+{\bf 34 (a), (b), (c) and (d):  For (a), interpret as ``at least one $a$'';
+for (b), interpret as ``at least one $a$ and at least one $b$''.}
+\\
+{\bf 34a:} $C(6, 1) \times 26^5$
+\\
+{\bf 34b:} $C(6, 1) \times C(5, 1) \times 26^4$
+\\
+{\bf 34c:} $C(5, 1) \times 24 \times 23 \times 22 \times 21$
+\\
+{\bf 34d:} $15 \times 24 \times 23 \times 22 \times 21$
+
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 6.4 (pp.\ 443--445):}     
+
+\noindent
+{\bf 6:} 
+$330$
+
+\noindent
+{\bf 14:} 
+$C(100, \frac{k}{2})$
+
+\noindent
+{\bf 18:}
+{\normalfont
+Each term in the sequence can be written by $a_{n} = a_{n-1} \times \frac{n - k}{k + 1}$ and 
+the value of $k$ increases by 1 for each next term. While $k < \frac{n}{2}$ the value of 
+$\frac{n - k}{k + 1}$ is greater than 1, so each next term is increasing and when $k = \frac{1}{2}$, the values
+of the term and the previous is equal. When $k > \frac{1}{2}$ the value of the multiplicative
+constant is less than 1 and the sequence starts decreasing.
+}
+\\
+\noindent
+{\bf 20a:}
+{\normalfont 
+Using the result from exercise 18, we know that the largest term in the 
+sequence is $C(n, \floor*{n/2})$ and that there are $n$ terms. The sum of 
+all the terms is upper bounded by $sum = C(n, \floor*{n/2}) \times n$. We 
+can then say that $\frac{sum}{n} \leq C(n, \floor*{n/2})$.
+}
+\\
+{\bf 20b:}
+{\normalfont 
+We can adjust the result from question 18, $\sum_{k=0}^{2n} C(2n, k) = 2^{2n} = 4^n$.
+The upper bound for the sum of the terms is $sum = C(2n, n) \times n$. 
+Thus, $\frac{sum}{2n} \leq C(2n, n)$.
+}
+
+\noindent
+{\bf 36:} 
+\\
+{\normalfont
+Attempting to prove the statement for all values of n through 
+regular induction. 
+\\
+Statement: $P(n)$ says $(x+y)^n = \sum_{k=0}^{n} C(n, k)x^{n-k}y^k$
+\\
+Base case: $(x+y)^0 = C(0, 0)x^{0-0}y^0 = 1$. The statement is true for the
+base case.
+\\
+Inductive Step: Assume $P(0)$ to $P(n)$ is true.
+\\
+Attempting to prove $P(n+1)$ which is $(x+y)^{n+1} = \sum_{k=0}^{n+1} C(n+1, k)x^{n+1-k}y^k$
+\\
+$(x+y)^{n+1}$ can be expressed as $(x+y)^n(x+y)$. $(x+y)^n$ follows the 
+binomial expansion properly from the inductive hypothesis.
+\\
+Looking at the first few terms in the expansion $C(n, 0)x^{n} + C(n, 1)x^{n-1}y^1 + C(n, 2)x^{n-2}y^2 + \cdots$
+it becomes to easy that in each term after the first, multiplying that term by $x$ and 
+the previous term by $y$ ensures that they are capable of being added. Multiplying 
+$(x+y)^n$ by $x+y$ does exactly this and makes each consecutive term capable of being 
+added together. Using the property of Pascal's Triangle that consecutive elements added 
+create a new row following the pattern of binomial expansion, we know that that 
+is exactly what's happening in this expansion.
+\\
+Hence, the statement $P(n)$ is true for all $n$.
+}
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 6.5 (pp.\ 454--457):}     
+
+\noindent
+{\bf 10 a:} $6^{12}$
+\\
+{\bf 10 b:} $6^{36}$
+\\
+{\bf 10 c:}
+
+\noindent
+{\bf 18:} $20! \div 2! \div 4! \div 3! \div 2! \div 3! \div 2! \div 3!$
+
+\noindent
+{\bf 24:} $C(17, 12)$
+
+\noindent
+{\bf 26:} $C(15, 5) \times C(10, 4) \times C(6, 3) \times C(3, 2)$
+
+\noindent
+{\bf 48:} $7! \times 2!$
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 9.1 (pp.\ 608--610):}     
+
+\noindent
+{\bf 6d:} {\normalfont Vacuously antisymmetric.}
+\\
+{\bf 6e:} {\normalfont Symmetric, reflexive, transitive}
+\\
+{\bf 6f:} {\normalfont Symmetric, transitive}
+\\
+{\bf 6h} {\normalfont Symmetric, transitive}
+
+
+\noindent
+{\bf 30a:} {\normalfont \{(1, 2), (2, 3), (3, 4), (1, 1), (2, 1), (2, 2), (3, 1), (3, 2), (3, 3)\}}
+\\
+{\bf 30b:} {\normalfont \{(1, 2), (2, 3), (3, 4)\}}
+
+\noindent
+{\bf 32:} {\normalfont \{(1, 1), (1, 2), (2, 1), (2, 2)\}}
+
+\noindent
+{\bf 52b:} {\normalfont Both relations should have (a, a) for every a in A. Therefore
+they are included in the intersection. }
+\\
+{\bf 52e:} {\normalfont If (a, a) is in R then (a, a) is in S and hence 
+the composite will contain (a, a). }
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 9.2 (pp.\ 619--621):}     
+
+\noindent
+{\bf 8a:} {\normalfont ISBN}
+\\
+{\bf 8b:} {\normalfont If the title and publication date pair for every book
+is unique.}
+\\
+{\bf 8c:} {\normalfont If the title and number of pages pair for every book
+is unique.}
+\\
+\noindent
+{\bf 12}
+** YOUR ANSWER GOES HERE **
+
+\noindent
+{\bf 16}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 9.3 (pp.\ 629--627):}     
+
+\noindent
+{\bf 4 (a)} {\normalfont \{(1, 1), (3, 3), (4, 4), (1, 2), (2, 1), (1, 4), (4, 1), (2, 3), (3, 2), (4, 3), (3, 4) \}}
+
+\noindent
+\\
+\\
+{\bf 14a:} 
+\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      0 & 1 & 0 \\
+      \hline
+      1 & 1 & 1 \\
+      \hline
+      1 & 1 & 1 \\
+      \hline
+      \end{tabular}
+\end{center}
+{\bf 14b}
+\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      0 & 1 & 0 \\
+      \hline
+      0 & 1 & 1 \\
+      \hline
+      1 & 0 & 0 \\
+      \hline
+      \end{tabular}
+\end{center}
+{\bf 14c}
+\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      0 & 1 & 1 \\
+      \hline
+      1 & 1 & 1 \\
+      \hline
+      0 & 1 & 0 \\
+      \hline
+      \end{tabular}
+\end{center}
+{\bf 14d}
+\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      1 & 1 & 1 \\
+      \hline
+      1 & 1 & 1 \\
+      \hline
+      0 & 1 & 0 \\
+      \hline
+      \end{tabular}
+\end{center}
+
+\noindent
+{\bf 22}
+\\
+\begin{tikzpicture}
+
+      \tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+      \tikzset{edge/.style = {->,> = latex'}}
+      % vertices
+      \node[vertex] (a) at  (0,0) {$a$};
+      \node[vertex] (b) at  (4,3) {$b$};
+      \node[vertex] (c) at  (8,0) {$c$};
+      \node[vertex] (d) at  (4,-3) {$d$};
+      %edges
+      \draw[edge] (a) to (a);
+      \draw[edge] (a) to (b);
+      \draw[edge] (b) to (c);
+      \draw[edge] (c) to (b);
+      \draw[edge] (c) to (d);
+      \draw[edge] (d) to (a);
+      \draw[edge] (d) to (b);
+      \end{tikzpicture}
+
+\noindent
+{\bf 26} {\normalfont \{(a, a), (b, b), (c, c), (d, d), (a, b), (b, a), (c, a), (c, d)\}}
+
+\noindent
+{\bf 32 (only for the graph in 26 and only for reflexive, symmetric,
+antisymmetric, and transitive)}
+\\
+{\normalfont
+The graph represents reflexive relation.
+}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\subsection*{Exercises for Section 9.4 (pp.\ 637--638):}     
+
+\noindent
+{\bf 6}
+\\
+\begin{tikzpicture}
+
+      \tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+      \tikzset{edge/.style = {->,> = latex'}}
+      % vertices
+      \node[vertex] (a) at  (0,0) {$a$};
+      \node[vertex] (b) at  (4,3) {$b$};
+      \node[vertex] (c) at  (8,0) {$c$};
+      %edges
+      \draw[edge] (a) to (b);
+      \draw[edge] (b) to (c);
+      \draw[edge] (c) to (a);
+      \draw[edge] (a) to (a);
+      \draw[edge] (b) to (b);
+      \draw[edge] (c) to (c);
+      \end{tikzpicture}
+
+\noindent
+{\bf 22}
+** YOUR ANSWER GOES HERE **
+
+\noindent
+{\bf 26 (c)}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\end{document}

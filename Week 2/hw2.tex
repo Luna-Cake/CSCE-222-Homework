@@ -1,0 +1,276 @@
+% Comment lines start with %
+% LaTeX commands start with \
+
+\documentclass[12pt]{article}  % This is an article with font size 12-point
+
+% Packages add features
+\usepackage{times}     % font choice
+\usepackage{amsmath}   % American Mathematical Association math formatting
+\usepackage{amsthm}    % nice formatting of theorems
+\usepackage{latexsym}  % provides some more symbols
+\usepackage{fullpage}  % uses most of the page (1-inch margins)
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\setlength{\parskip}{.1in}  % increase the space between paragraphs
+
+\renewcommand{\baselinestretch}{1.1}  % increase the space between lines
+
+% Convenient renaming of symbols for logic formulas
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\XOR}{\oplus}
+\newcommand{\IMPLIES}{\rightarrow}
+\newcommand{\IFF}{\leftrightarrow}
+
+% Actual content starts here.
+\begin{document}
+
+\begin{center}         % center all the material between begin and end
+{\large                % use larger font
+CSCE 222-200, Discrete Structures for Computing, Honors \\  % \\ is line break
+Fall 2021 \\
+Homework 2 \\
+Aakash Haran}
+\end{center}
+
+% blank line separates paragraphs.  First line of a paragraph is automatically
+% indented.  
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+                    
+\noindent              % don't indent
+{\bf Instructions:}    % \bf makes text boldface
+                       % \em makes text emphasized (italics)
+
+\begin{itemize}        % makes an itemized list
+\item The exercises are from the textbook.  MAKE SURE YOU HAVE THE CORRECT
+      EDITION!  You are encouraged to work
+      extra problems to aid in your learning; remember, the solutions to 
+      the odd-numbered problems are in the back of the book.
+\item Each exercise is worth 5 points.
+\item Grading will be based on correctness, clarity, and whether your
+      solution is of the appropriate length.
+\item Always justify your answers.
+\item Don't forget to acknowledge all sources of assistance on the cover
+      sheet, and write up your solutions on your own.
+\item {\em Turn in your pdf file on Canvas by 3:00 PM on Wednesday, 
+      Sep 22.}
+\end{itemize}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf LaTeX hints:}  Read this .tex file for some explanations that are in
+the comments.
+
+Math formulas are enclosed in \$ signs, e.g., {\tt \$x + y = z\$}
+becomes $x + y = z$.
+
+Logical operators: $\NOT, \AND, \OR, \XOR, \IMPLIES, \IFF$.
+
+Here is a truth table using the ``tabular'' environment:
+
+\begin{center}
+\begin{tabular}{|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $\NOT p$ \\       % separate column entries with &
+\hline
+\hline
+T & F \\
+\hline
+F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf ** Delete the instructions and the LaTeX hints in your solution. **}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+% \subsection makes a subsection heading; * leaves it unnumbered.
+% (Usually subsections are inside sections, but the \section command
+% used a font that was larger than I wanted.)
+\subsection*{Exercises for Section 1.6 (pp.\ 82--84):}     
+
+\noindent
+{\bf 12:}  (Use the result of Exercise 11 without proving it.  I found it
+easier to first use the rules of inference and then use Exercise 11.)
+
+\begin{center}
+
+\begin{tabular}{|c|c|}  % two columns, both centered (c), 
+            % divided by vertical lines (|)
+\hline                  % horizontal line
+$(p \AND t) \IMPLIES (r \OR s)$ & Premise \\       % separate column entries with &
+\hline
+$q \IMPLIES (u \AND t)$ & Premise \\
+\hline
+$u \IMPLIES p$ & Premise \\
+\hline
+$\NOT s$ & Premise \\
+\hline
+$q$ & Rremise (result from exercise 11)\\
+\hline
+$u \AND t$ & Modus Ponens\\
+\hline
+$u$ & Simplification\\
+\hline
+$t$ & Simplification\\
+\hline
+$p$ & Modus Ponens\\
+\hline
+$p \AND t$ & Conjunction\\
+\hline
+$r \OR s$ & Modus Ponens\\
+\hline
+$r$ & Disjunctive Syllogism\\
+\hline
+\end{tabular}
+
+\end{center}
+
+\noindent
+{\bf 20(a):}
+It is not a true statement. Even if $a^{2}$ is a positive real number the square root
+can be a negative number.
+
+\noindent
+{\bf 28:}
+(Hint:  Work backwards, assuming that you did end up with nine zeros.)
+\\
+$\NOT R(x) \IMPLIES \forall x(P(x) \OR \NOT Q(x))$, the contrapositive of the initial premise.\\
+Since $\forall x(P(x) \OR Q(x))$ is a premise, it has to be that $\forall x (\NOT R(x) \IMPLIES P(x))$. It is implied that the 
+value really depends on $P(x)$ since $Q(x)$ appears in both its original and negated form in the statements.
+
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 1.8 (pp.\ 113--117):}     
+
+\noindent
+{\bf 6:} 
+\begin{center}
+      \begin{tabular}{|c|c|c|c|c|}  % two columns, both centered (c), 
+                              % divided by vertical lines (|)
+      \hline                  % horizontal line
+      $a$ & $b$ & $c$ & $min(a, min(b, c))$ & $min(min(a, b), c)$\\       % separate column entries with &
+      \hline
+      \hline
+      1 & 0 & -2 & -2 & -2 \\
+      \hline
+      -1.4 & -3.5 & -7.4 & -7.4 & -7.4 \\
+      \hline
+      0 & 0 & 0 & 0 & 0 \\
+      \hline
+      1.1 & 1.2 & 1.3 & 1.1 & 1.1 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+\noindent
+{\bf 8:}
+If $x = 2$ and $y = 3$, we have $5(2) + 5(3) = 25$. Without loss of generality, we do 
+not have to test a case where x is odd and y is even as it is identical to this case.
+
+\noindent
+{\bf 28:} Proof by contradiction. Assuming we started with 9 0s, then the previous configuration
+would've had to be all 1's. In order for that configuration to be possible, its 
+previous configuration would have to have alternating 1's and 0's without any 
+consecutive element being the same. However, since there are 9 positions, two 
+of the same numbers are always consecutive. Hence, it is impossible to end up at 
+a configuration of 9 0s.
+\\
+\noindent
+{\bf 36:}
+Using a proof by contradiction.\\
+Assume $\sqrt[3]{2} = \frac{a}{b}$ where a and b are relatively prime positive integers.\\
+It follows that $2b^{3} = a^{3}$ by multiplying both sides by b and cubing them.\\
+This equation shows that $a^{3}$ is an even integer, implying that $a = 2c$. \\
+The first equation be rewritten with this substitution as $b^{3} = 4c^{3}$. This implies that b
+is also even. Hence, since a and b are even integers, we know that they are not relatively
+prime, so the cube root of 2 is irrational.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 2.1 (pp.\ 131--133):}     
+
+\noindent
+{\bf 10(b)--(f):} Be careful, as $\{2\}$ is NOT the same as $2$.\\
+b: 2 is not an element of the set.\\
+c: 2 is an element of the set.\\
+d: 2 is not an element of the set.\\
+e: 2 is not an element of the set.\\
+f: 2 is not an element of the set.\\
+
+\noindent
+{\bf 26:}
+Only subdivision d is a powerset of the set ${a, b}$.
+
+\noindent
+{\bf 50:} If S is member of S, this leads to a contradiction. S contains the set 
+of sets that do not belong to itself, but in this case S belongs to itself and so 
+shouldn't be in the set. However, if S were not in the set S, then it is a set that
+doesn't contain itself and should be in the set S, hence it's contradiction either
+way. 
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 2.2 (pp.\ 144--146):}     
+
+\noindent
+{\bf 34:}
+\\
+Using the provided identity, $(A-B) \cap (B-C) \cap (A-C)$ turns to 
+$ (A \cap \widetilde B) \cap (B \cap \widetilde C) \cap (A \cap \widetilde C)$. 
+Using the commutative law we get $ (A \cap \widetilde A) \cap (B \cap \widetilde B) \cap (C \cap \widetilde C)$.
+The intersection of a set and its negation is the empty set.
+Hence, the statement simplifies to the empty set.
+
+\noindent
+{\bf 72(e):}  Only consider the special case where $A$ is a subset of $B$
+and $B$ is a subset of $C$.
+\\
+If the cardinality of A, B, and C are 1, 2, and 3 respectively, it is easy to construct
+an inequality. This also implies that A is a proper subset of B and B is a proper
+subset of C. The inequaltiy that forms is $\frac{2}{3} \le \frac{5}{6}$ which is true.
+In the case where cardinality of all three sets is 1 or 0, then we get $0 \le 0$.
+
+%--------------------------------------------------------------------
+
+\subsection*{Exercises for Section 2.3 (pp.\ 161--164):}     
+
+\noindent
+{\bf 34 a:} Every value being able to map from A to C implies 
+that for every value c in C, there is a b in B such that 
+f(b) = c. b is derived from a value x in A, such that g(x) = b. Therefore, for every
+element c in C, there is an x in A, such that f(g(x)) = c implying that f is onto.
+\\
+{\bf 34 b:} If f(g(x)) is one-to-one this means that f(a) = f(b) implies a = b. 
+For a and b, there are values in A, x and y, such that g(x) = a and g(y) = b. Since
+a = b, g(x) = g(y) when g is one-to-one. This means x = y, and so if f(g(x)) is one-to-one, g(x) is one-to-one.
+\\
+{\bf 34 c:} If f(g(x)) is a bijection, then for every c in C, there is a x in A such 
+that f(g(x)) = c and if f(g(a)) = f(g(b)) then g(a) = g(b). If g(x) is onto, this 
+means for every b in B, there is an x in A such that g(x) = b. This means if f(g(x))
+is a bijection then f(a) = f(b) implies a = b. a and b are elements in B. There is 
+an x and y in A such that g(x) = a, and g(y) = b. Hence, g(x) = g(y). Therefore, if 
+g is onto then f is one-to-one.
+
+
+Assuming f is one-to-one, this means we know that f(g(x)) = f(b) implies g(x) = b.
+Hence, since f(g(x)) is a bijection, then for every element b in B there must be a 
+x in A such that g(x) = a. Hence, the statement that if f(g(x)) is a bijection
+then f is one-to-one iff g is onto is true.
+
+\noindent
+{\bf 76(e):}
+This is a false statement. Suppose $x = 0.5$ and $y = 0.5$, then 
+$\lfloor 0.5 \rfloor + \lfloor 0.5 \rfloor + \lfloor 1 \rfloor = \lfloor 2(0.5) \rfloor + 
+\lfloor 2(0.5) \rfloor$. This leads to the statement $1 = 2$ which is false.
+
+\end{document}
